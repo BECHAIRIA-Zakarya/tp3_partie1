@@ -1,0 +1,22 @@
+Exercice1 : Interaction Simple entre Modules
+4)
+verify(userRepositoryMock).findUserById(1);
+assertEquals(user, result);
+==> On trouve que l'objet mock est appelée avec le bon
+argument lorsque UserService.getUserById est appelée.
+
+Exercice 2 : Interaction avec une Base de Données avec des Mocks
+
+ 5)  verify(orderServiceMock).createOrder(order);
+     verify(orderDaoMock).saveOrder(order);
+ ==> On trouve que OrderService.createOrder est appelé avec
+  le bon argument.
+  mais OrderDao.saveOrder n'est pas appelé avec l'objet de
+  commande créé.
+
+Exercice 3 : Intégration d'API avec Mocking
+4)
+==> On trouve que ProductApiClient.getProduct est appelé
+avec le bon argument dans ces différents scénarios :
+récupération réussie, format de donnée incompatible,
+échecs d'appel d'API.
